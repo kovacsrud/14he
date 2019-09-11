@@ -17,7 +17,7 @@ namespace Tombok
             //tömb feltöltése véletlen számokkal
             for (int i = 0; i < szamok.Length; i++)
             {
-                szamok[i] = rand.Next(1,101);
+                szamok[i] = rand.Next(-121,1016);
 
             }
 
@@ -29,6 +29,26 @@ namespace Tombok
             }
 
             Console.WriteLine($"Az elemek összege:{osszeg}");
+
+            //min,max értékek meghatározása
+            var min = Int32.MaxValue;
+            var max = Int32.MinValue;
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                if (szamok[i]<min)
+                {
+                    min = szamok[i];
+                }
+                if (szamok[i]>max)
+                {
+                    max = szamok[i];
+                }
+            }
+            Console.WriteLine($"Min:{min},Max:{max}");
+
+            //negatív számok darabszámának meghatározása
+
+            Console.ReadKey();
         }
     }
 }
