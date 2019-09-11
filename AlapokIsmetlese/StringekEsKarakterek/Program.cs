@@ -72,8 +72,20 @@ namespace StringekEsKarakterek
             //tartalmaz számjegyeket, akkor írja ki, hogy a szövegben 
             //nincsenek számjegyek
 
-            String sz = "Valami szöveg 1926";
+            String sz = "Valami 45 szöveg 1926";
+            var osszeg = 0;
+            char[] szCh = sz.ToCharArray();
 
+            for (int i = 0; i < szCh.Length; i++)
+            {
+                if (Char.IsDigit(szCh[i]))
+                {
+                    //int-re kényszerítés cast-olással(típuskényszerítés)
+                    osszeg = osszeg + (int)Char.GetNumericValue(szCh[i]);
+                }
+            }
+
+            Console.WriteLine(osszeg);
 
             Console.WriteLine(fordit);
 
