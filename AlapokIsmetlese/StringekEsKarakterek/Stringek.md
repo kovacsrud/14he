@@ -35,3 +35,4 @@ Console.WriteLine(szoveg.Replace("adat", "érték"));
 ```c#
 Console.WriteLine(szoveg.Substring(2,3));
 ```
+**A String típus értéke nem változtatható.**
