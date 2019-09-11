@@ -47,6 +47,27 @@ namespace Tombok
             Console.WriteLine($"Min:{min},Max:{max}");
 
             //negatív számok darabszámának meghatározása
+            var nDb = 0;
+            for (int i = 0; i < szamok.Length; i++)
+            {
+                if (szamok[i]<0)
+                {
+                    nDb++;
+                }
+            }
+
+            Console.WriteLine($"Negatív szám:{nDb}");
+
+            //Linq
+            Console.WriteLine($"Összeg:{szamok.Sum()},Átlag:{szamok.Average()},Min:{szamok.Min()},Max:{szamok.Max()}");
+
+            //Megszámlálás valamilyen feltétel alkalmazásával
+            Console.WriteLine($"Elemszám:{szamok.Count(x=>x>10 && x<30)}");
+
+            //Kétdimenziós tömb
+            int[,] szamok2d = new int[10, 10];
+
+            //feltöltés véletlen számokkal, listázás
 
             Console.ReadKey();
         }
