@@ -68,6 +68,23 @@ namespace Tombok
             int[,] szamok2d = new int[10, 10];
 
             //feltöltés véletlen számokkal, listázás
+            for (int i = 0; i < szamok2d.GetLength(0); i++)
+            {
+                for (int j = 0; j < szamok2d.GetLength(1); j++)
+                {
+                    szamok2d[i, j] = rand.Next(1,101);
+                }
+            }
+            //Kiíratás
+            for (int i = 0; i < szamok2d.GetLength(0); i++)
+            {
+                for (int j = 0; j < szamok2d.GetLength(1); j++)
+                {
+                    Console.Write(szamok2d[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
 
             Console.ReadKey();
         }
