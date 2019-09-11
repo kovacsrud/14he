@@ -36,3 +36,27 @@ Console.WriteLine(szoveg.Replace("adat", "érték"));
 Console.WriteLine(szoveg.Substring(2,3));
 ```
 **A String típus értéke nem változtatható.**
+
+**Karakter típus**
+
+Egyetlen karaktert (betű,szám,írásjel,vezérlő karakter) tárol.
+A karakter tömbök adott számú karaktert tudnak tárolni.
+
+Karakterekkel a **Char** osztály használatával lehet műveleteket végezni.
+pl. az adott karakter betű-e?
+```C#
+Char karakter = 'q';
+
+if (Char.IsLetter(karakter))
+   {
+      Console.WriteLine("Ez betű");
+   }
+```
+Karakter átalakítása nagybetűsre, ha kisbetűs
+```c#
+Char karakter='q';
+
+if (Char.IsLower(karakter))
+   {
+        karakter = Char.ToUpper(karakter);
+   }

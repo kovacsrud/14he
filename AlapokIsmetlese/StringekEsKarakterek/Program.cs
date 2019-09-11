@@ -44,6 +44,39 @@ namespace StringekEsKarakterek
                 Console.WriteLine("Ez betű");
             }
 
+            //Feladat: egy string karaktereit alakítsuk nagybetűsre,
+            //ha kisbetűs és fordítva.
+
+            string fordit = "Ezt A SzövegeT HaSznáJuk";
+            char[] forditCh = fordit.ToCharArray();
+            //Egy lépésben is lehet karaktertömbbé alakítani egy Stringet
+            var fordit2 = "Szöveg".ToCharArray();
+
+            for (int i = 0; i < forditCh.Length; i++)
+            {
+                if (Char.IsLower(forditCh[i]))
+                {
+                    forditCh[i] = Char.ToUpper(forditCh[i]);
+                }
+                else
+                {
+                    forditCh[i] = Char.ToLower(forditCh[i]);
+                }
+            }
+
+            //A karaktertömböt szöveggé kell alakítani
+            fordit = new string(forditCh);
+
+            //Írjunk programot, amely megállapítja egy String-ben
+            //lévő számjegyek összegét. Ha esetleg a szöveg nem
+            //tartalmaz számjegyeket, akkor írja ki, hogy a szövegben 
+            //nincsenek számjegyek
+
+            String sz = "Valami szöveg 1926";
+
+
+            Console.WriteLine(fordit);
+
             Console.ReadKey();
         }
     }
