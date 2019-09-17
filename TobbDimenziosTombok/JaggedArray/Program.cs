@@ -25,6 +25,47 @@ namespace JaggedArray
                 Console.WriteLine();
             }
 
+            //készítsen egy 20X20 elemű 2d tömböt! Töltse fel -100 és 100 közötti
+            //véletlen számokkal! Írassa ki úgy ezt a tomböt, hogy a negatív számok
+            //pirossal, a pozitívak zölddel, a nullák pedig egy tetszőlegesen
+            //megválasztott színnek jelenjenek meg!
+
+            int[,] tomb2d = new int[20, 20];
+            Random rand = new Random();
+            //feltöltés véletlen számokkal
+            for (int i = 0; i < tomb2d.GetLength(0); i++)
+            {
+                for (int j = 0; j < tomb2d.GetLength(1); j++)
+                {
+                    tomb2d[i, j] = rand.Next(-100, 101);
+                }
+                
+            }
+            //kiíratás
+            for (int i = 0; i < tomb2d.GetLength(0); i++)
+            {
+                for (int j = 0; j < tomb2d.GetLength(1); j++)
+                {
+                    if (tomb2d[i,j]>0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+
+                    }
+                    if (tomb2d[i,j]<0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    if (tomb2d[i, j] == 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Magenta;
+                    }
+                    Console.Write(tomb2d[i,j]+" ");
+                    Console.ResetColor();
+                }
+                Console.WriteLine();
+            }
+
+
 
 
             Console.ReadKey();
