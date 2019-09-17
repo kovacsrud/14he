@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,19 +80,25 @@ namespace JaggedArray
             var temp = 0;
             for (int i = 0; i < szamDb; i++)
             {
-                Console.Write($"{i}.tipp:");
+                Console.Write($"{i+1}.tipp:");
                 temp = Convert.ToInt32(Console.ReadLine());
 
                 while (temp<1 || temp>osszesSzam || tippek.Contains(temp))
                 {
-                    Console.Write($"Rossz tipp, újra {i}.tipp:");
+                    Console.Write($"Rossz tipp, újra {i+1}.tipp:");
                     temp = Convert.ToInt32(Console.ReadLine());
+                    //Debug.WriteLine(temp);
                 }
                 tippek[i] = temp;
 
             }
 
+            //nyerőszámok generálása
 
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                Console.Write(tippek[i]+" ");
+            }
 
             Console.ReadKey();
         }
