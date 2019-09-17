@@ -36,6 +36,19 @@ private static void Kiir(string s1,string s2)
         }
 ```
 
+**Matematikai műveleteknél a Math osztály jó szolgálatot tehet**
+
+Hatványozó függvény
+```C#
+public static double Hatvany(double szam,double kitevo)
+        {
+            return Math.Pow(szam, kitevo);
+        }
+```
+A paraméterként kapott **szam**, ill. **kitevo** értékével meghívjuk a **Math.Pow()** függvényt.
+
+Érték szerinti paraméter átadásnál  az átadott értékek lemásolódnak, az eredeti változók értéke nem fog megváltozni.
+Van lehetőség cím (referencia) szerinti átadásra, ebben az esetben a változó memóriacímét adjuk át, és a változó értékét a függvényből meg tudjuk változtatni.
 
 
 
