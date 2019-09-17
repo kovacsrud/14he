@@ -73,6 +73,21 @@ namespace Fuggvenyek
             a = a * a;
         }
 
+        public static void Csere(ref int a, ref int b)
+        {
+            //csere temp változó nélkül?
+            //var temp = a;
+            //a = b;
+            //b = temp;
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            
+
+        }
+
+
+
         static void Main(string[] args)
         {
             
@@ -96,12 +111,15 @@ namespace Fuggvenyek
             Console.WriteLine();
             var n = 3;
             Negyzet(ref n);
+            Console.WriteLine(n);
             //?n
             var z = 11;
             var x = 22;
             //írjunk függvényt, amelyik megcseréli z és x értékét
+            Csere(ref z, ref x);
+            Console.WriteLine($"z:{z},x:{x}");
 
-            Console.WriteLine(n);
+            
 
             Console.ReadKey();
         }
