@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JaggedArray", "JaggedArray\JaggedArray.csproj", "{EA5EC90D-B727-4727-BB9C-8EE711B865B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fuggvenyek", "Fuggvenyek\Fuggvenyek.csproj", "{E850FDA4-1CA9-4E2D-AB95-6C164978F64C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EA5EC90D-B727-4727-BB9C-8EE711B865B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA5EC90D-B727-4727-BB9C-8EE711B865B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA5EC90D-B727-4727-BB9C-8EE711B865B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E850FDA4-1CA9-4E2D-AB95-6C164978F64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E850FDA4-1CA9-4E2D-AB95-6C164978F64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E850FDA4-1CA9-4E2D-AB95-6C164978F64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E850FDA4-1CA9-4E2D-AB95-6C164978F64C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
