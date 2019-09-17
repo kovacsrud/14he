@@ -92,8 +92,23 @@ namespace JaggedArray
                 tippek[i] = temp;
 
             }
-
             //nyerőszámok generálása
+            for (int i = 0; i < szamDb; i++)
+            {
+                
+                temp = rand.Next(1,osszesSzam+1);
+
+                while (nyeroSzamok.Contains(temp))
+                {
+                    temp = rand.Next(1, osszesSzam + 1);
+                    //Debug.WriteLine(temp);
+                }
+                nyeroSzamok[i] = temp;
+
+            }
+            var talalat = 0;
+
+            
 
             for (int i = 0; i < tippek.Length; i++)
             {
