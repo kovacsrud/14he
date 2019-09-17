@@ -50,5 +50,34 @@ A paraméterként kapott **szam**, ill. **kitevo** értékével meghívjuk a **M
 Érték szerinti paraméter átadásnál  az átadott értékek lemásolódnak, az eredeti változók értéke nem fog megváltozni.
 Van lehetőség cím (referencia) szerinti átadásra, ebben az esetben a változó memóriacímét adjuk át, és a változó értékét a függvényből meg tudjuk változtatni.
 
+**Főprogramban deklarált változó értékének megváltoztatása (négyzetre emelés) cím szerinti paraméterátadással**
+```C#
+public static void Negyzet(ref int a)
+   {
+            a = a * a;
+   }
+```
+Ebben az esetben nem konkrét érték, hanem referencia(memóriacím) adódik át.
+
+**Változók cseréje függvénnyel, segédváltozó használatával**
+```c#
+public static void Csere(ref int a, ref int b)
+    {
+           var temp = a;
+           a = b;
+           b = temp;
+    }
+
+**Változók cseréje függvénnyel, segédváltozó használata nélkül**
+```c#
+public static void Csere(ref int a, ref int b)
+        {
+            a = a + b;
+            b = a - b;
+            a = a - b;          
+
+        }
+```
+
 
 
