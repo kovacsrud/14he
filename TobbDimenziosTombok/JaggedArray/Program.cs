@@ -108,12 +108,31 @@ namespace JaggedArray
             }
             var talalat = 0;
 
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                for (int j = 0; j < nyeroSzamok.Length; j++)
+                {
+                    if (tippek[i]==nyeroSzamok[j])
+                    {
+                        talalat++;
+                    }
+                }
+            }
             
+
 
             for (int i = 0; i < tippek.Length; i++)
             {
                 Console.Write(tippek[i]+" ");
             }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < nyeroSzamok.Length; i++)
+            {
+                Console.Write(nyeroSzamok[i] + " ");
+            }
+            Console.WriteLine($"Találatok száma:{talalat}");
 
             Console.ReadKey();
         }
