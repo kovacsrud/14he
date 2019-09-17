@@ -65,6 +65,31 @@ namespace JaggedArray
                 Console.WriteLine();
             }
 
+            //Lottó játék készítése
+            Console.Write("Hány számot húzunk?:");
+            int szamDb = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Hány számból sorsolunk?:");
+            int osszesSzam = Convert.ToInt32(Console.ReadLine());
+
+            int[] tippek = new int[szamDb];
+            int[] nyeroSzamok = new int[szamDb];
+
+            //tippek bekérése
+            var temp = 0;
+            for (int i = 0; i < szamDb; i++)
+            {
+                Console.Write($"{i}.tipp:");
+                temp = Convert.ToInt32(Console.ReadLine());
+
+                while (temp<1 || temp>osszesSzam || tippek.Contains(temp))
+                {
+                    Console.Write($"Rossz tipp, újra {i}.tipp:");
+                    temp = Convert.ToInt32(Console.ReadLine());
+                }
+                tippek[i] = temp;
+
+            }
 
 
 
