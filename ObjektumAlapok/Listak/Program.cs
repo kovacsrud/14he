@@ -37,7 +37,30 @@ namespace Listak
             };
 
             emberek.Add(ember3);
+            
+            Console.WriteLine(emberek.Count);
 
+            for (int i = 0; i < emberek.Count; i++)
+            {
+                Console.WriteLine($"{emberek[i].Nev},{emberek[i].Magassag},{emberek[i].Eletkor}");
+            }
+
+            //nem lehet benne módosítani, nem kell az elemszámmal törődni
+            foreach (Ember e in emberek)
+            {
+                Console.WriteLine($"{e.Nev},{e.Magassag},{e.Eletkor}");
+            }
+            //Kiss vezetéknevűek egy külön listába?
+
+            //Linq
+            var kissek = emberek.FindAll(x=>x.Nev.StartsWith("Kiss") && x.Eletkor>30);
+
+            foreach (var k in kissek)
+            {
+                Console.WriteLine($"{k.Nev},{k.Magassag},{k.Eletkor}");
+            }
+
+            emberek.Clear();
 
             Console.ReadKey();
         }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oroklodes", "Oroklodes\Orok
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absztrakt", "Absztrakt\Absztrakt.csproj", "{7A154B9A-3B7C-455A-A62C-41D334DF9B78}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Listak", "Listak\Listak.csproj", "{0FC30220-3C13-409F-A47F-7AB4BE20D7EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC30220-3C13-409F-A47F-7AB4BE20D7EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC30220-3C13-409F-A47F-7AB4BE20D7EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC30220-3C13-409F-A47F-7AB4BE20D7EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC30220-3C13-409F-A47F-7AB4BE20D7EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
