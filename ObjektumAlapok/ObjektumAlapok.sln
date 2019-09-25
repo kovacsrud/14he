@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjektumAlapok", "ObjektumAlapok\ObjektumAlapok.csproj", "{9724B7C5-8BC2-428F-BD32-6BEC331304D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oroklodes", "Oroklodes\Oroklodes.csproj", "{1E91EC0B-49EB-42B7-A82D-823C2EA67ABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Absztrakt", "Absztrakt\Absztrakt.csproj", "{7A154B9A-3B7C-455A-A62C-41D334DF9B78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{9724B7C5-8BC2-428F-BD32-6BEC331304D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9724B7C5-8BC2-428F-BD32-6BEC331304D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9724B7C5-8BC2-428F-BD32-6BEC331304D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E91EC0B-49EB-42B7-A82D-823C2EA67ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E91EC0B-49EB-42B7-A82D-823C2EA67ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E91EC0B-49EB-42B7-A82D-823C2EA67ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E91EC0B-49EB-42B7-A82D-823C2EA67ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A154B9A-3B7C-455A-A62C-41D334DF9B78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

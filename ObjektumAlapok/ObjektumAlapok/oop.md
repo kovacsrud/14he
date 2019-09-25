@@ -115,4 +115,9 @@ A property egy adatmezőt és annak beállító valamint lekérdező metódusát
 
 ```
 
+**Öröklődés**
+
+Az öröklődés során egy új osztályt leszármaztatunk egy meglévőből. Az utód osztály örökli az ős összes tulajdonságát(adatmezőit) és metódusát.
+Az új osztályban azokat az új adatokat és metódusokat kell megadni, amelyekkel az adott osztályt kiegészítjük.
+Egy leszármazott osztálynak csak egy őse lehet.
 
