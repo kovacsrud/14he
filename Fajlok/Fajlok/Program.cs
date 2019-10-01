@@ -11,10 +11,13 @@ namespace Fajlok
     {
         static void Main(string[] args)
         {
+            FileStream file = null;
+            StreamReader sr = null;
+
             try
             {
-                FileStream file = new FileStream(@"d:/rud/tesztadat_20k.txt", FileMode.Open);
-                StreamReader sr = new StreamReader(file,Encoding.Default);
+                file = new FileStream(@"d:/rud/tesztadat_20k.txt", FileMode.Open);
+                sr = new StreamReader(file,Encoding.Default);
 
                 while (!sr.EndOfStream)
                 {
@@ -26,6 +29,11 @@ namespace Fajlok
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);                                
+            }
+            finally
+            {
+                //minden esetben végre fog hajtódni, ami itt van
+                sr.Close();
             }
 
 
