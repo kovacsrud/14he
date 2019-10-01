@@ -60,13 +60,32 @@ namespace Fajlok
 
             Console.WriteLine(hetven.Count);
 
-            foreach (var h in hetven)
-            {
-                Console.WriteLine($"{h.vezeteknev},{h.keresztnev},{h.szulev},{h.szulhely}");
-            }
+            //foreach (var h in hetven)
+            //{
+            //    Console.WriteLine($"{h.vezeteknev},{h.keresztnev},{h.szulev},{h.szulhely}");
+            //}
             //k-val kezdődő vezetéknevű emberek
             var kkezd = emberek.FindAll(x=>x.vezeteknev.ToLower().StartsWith("k"));
-            Console.WriteLine($"K-val kezdődő vezetéknevek:{kkezd}.db");
+
+            //Console.WriteLine($"K-val kezdődő vezetéknevek:{kkezd}.db");
+
+            //Készítsen összesítést, ami megadja, hogy az egyes helyiségekben
+            //hányan születtek!
+            var helyisegek = emberek.ToLookup(x=>x.szulhely).OrderBy(x=>x.Count());
+
+            //foreach (var h in helyisegek)
+            //{
+            //    Console.WriteLine($"{h.Key},{h.Count()}");
+            //}
+
+            //születési év és hely szerinti összesítés
+            var szhelyev = emberek.ToLookup(x=>new {x.szulhely,x.szulev }).OrderBy(x=>x.Key.szulhely).ThenBy(x=>x.Key.szulev);
+
+            foreach (var s in szhelyev)
+            {
+                Console.WriteLine($"{s.Key.szulhely},{s.Key.szulev},{s.Count()}");
+            }
+
 
             try
             {
