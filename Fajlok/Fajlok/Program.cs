@@ -16,7 +16,7 @@ namespace Fajlok
 
             try
             {
-                file = new FileStream(@"d:/rud/tesztadat_20k.txt", FileMode.Open);
+                file = new FileStream(@"d:/rud/tesztadat_200k.txt", FileMode.Open);
                 sr = new StreamReader(file,Encoding.Default);
 
                 while (!sr.EndOfStream)
@@ -33,7 +33,12 @@ namespace Fajlok
             finally
             {
                 //minden esetben végre fog hajtódni, ami itt van
-                sr.Close();
+                if (sr!=null)
+                {
+                    sr.Close();
+                }
+
+                
             }
 
 
