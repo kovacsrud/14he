@@ -11,35 +11,28 @@ namespace Fajlok
     {
         static void Main(string[] args)
         {
-            FileStream file = null;
-            StreamReader sr = null;
+        
 
             try
             {
-                file = new FileStream(@"d:/rud/tesztadat_200k.txt", FileMode.Open);
-                sr = new StreamReader(file,Encoding.Default);
+                FileStream file = new FileStream(@"d:/rud/tesztadat_20k.txt", FileMode.Open);
 
-                while (!sr.EndOfStream)
+
+                //használat után felszabadítja az erőforrást
+                using (StreamReader sr = new StreamReader(file, Encoding.Default))
                 {
-                    Console.WriteLine(sr.ReadLine());
-                }
-
-                sr.Close();
+                    while (!sr.EndOfStream)
+                    {
+                        Console.WriteLine(sr.ReadLine());
+                    }
+                }                             
+                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);                                
             }
-            finally
-            {
-                //minden esetben végre fog hajtódni, ami itt van
-                if (sr!=null)
-                {
-                    sr.Close();
-                }
-
-                
-            }
+           
 
 
 
