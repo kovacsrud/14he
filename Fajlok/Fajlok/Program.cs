@@ -65,8 +65,27 @@ namespace Fajlok
                 Console.WriteLine($"{h.vezeteknev},{h.keresztnev},{h.szulev},{h.szulhely}");
             }
             //k-val kezdődő vezetéknevű emberek
-            var kkezd = emberek.FindAll(x=>x.vezeteknev.ToLower().StartsWith("k")).Count;
+            var kkezd = emberek.FindAll(x=>x.vezeteknev.ToLower().StartsWith("k"));
             Console.WriteLine($"K-val kezdődő vezetéknevek:{kkezd}.db");
+
+            try
+            {
+                FileStream outFajl = new FileStream(@"d:/kkezd.txt",FileMode.Create);
+                using (StreamWriter sw = new StreamWriter(outFajl, Encoding.Default))
+                {
+                    foreach (var k in kkezd)
+                    {
+                        sw.WriteLine($"{k.vezeteknev},{k.keresztnev},{k.szulev},{k.szulhely}");
+                    }
+                }                
+               
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                
+            }
+
 
             Console.ReadKey();
         }
