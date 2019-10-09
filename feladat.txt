@@ -1,0 +1,9 @@
+Készítsen egy lottójátékot szimuláló programot!
+A program kérje be a következõket:
+-hány számot akarunk kihúzni
+-hány számból húzunk
+-a megadott számú tippeket
+
+Ezt követõen a program sorsolja ki a nyerõszámokat, majd
+határozza meg hogy hány találatot ért el a játékos!
+
