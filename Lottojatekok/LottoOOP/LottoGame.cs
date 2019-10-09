@@ -76,6 +76,22 @@ namespace LottoOOP
             TombLista(nyeroSzamok);
         }
 
+        public int GetTalalat()
+        {
+            return talalatok;
+        }
+
+        public void TalalatSzam()
+        {
+            for (int i = 0; i < tippek.Length; i++)
+            {
+                if (nyeroSzamok.Contains(tippek[i]))
+                {
+                    talalatok++;
+                }
+            }
+        }
+
 
     }
 }

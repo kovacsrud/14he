@@ -15,6 +15,12 @@ namespace LottoOOP
             //metódust kelljen hívni
             LottoGame lotto = new LottoGame(5, 90);
             lotto.Tippeles();
+            lotto.Sorsolas();
+            lotto.TalalatSzam();
+            lotto.TippLista();
+            lotto.NyeroszamLista();
+            Console.WriteLine($"Találatok száma:{lotto.GetTalalat()}");
+
 
 
             Console.ReadKey();
