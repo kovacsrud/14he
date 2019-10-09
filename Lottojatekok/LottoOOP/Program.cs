@@ -13,6 +13,9 @@ namespace LottoOOP
             //A könnyű implementálhatósághoz
             //az kell, hogy innen csak 1-2
             //metódust kelljen hívni
+            LottoGame lotto = new LottoGame(5, 90);
+            lotto.Tippeles();
+
 
             Console.ReadKey();
         }
