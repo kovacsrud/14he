@@ -25,6 +25,17 @@ namespace LottoOOP
 
         }
 
+        public void Jatek()
+        {
+            talalatok = 0;
+            Tippeles();
+            Sorsolas();
+            TalalatSzam();
+            TippLista();
+            NyeroszamLista();
+            Console.WriteLine($"Találatok száma:{GetTalalat()}");
+        }
+
         public void Tippeles()
         {
             for (int i = 0; i < szamDb; i++)
