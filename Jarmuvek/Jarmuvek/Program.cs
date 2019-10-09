@@ -66,7 +66,19 @@ namespace Jarmuvek
             szemelyszallitok.Add(sz1);
             szemelyszallitok.Add(sz2);
 
+            var munkagepLekerdezes = munkagepek.FindAll(x=>x.KozforgalombanResztvehet==true && x.MaxSebesseg>40);
 
+            var autoLekerdezes = szemelyszallitok.FindAll(x=>x.SzallithatoSzemelyek>4);
+
+            foreach (var m in munkagepLekerdezes)
+            {
+                Console.WriteLine($"{m.AlkalmazasiTerulet},{m.Eroforras},{m.KozforgalombanResztvehet},{m.MaxSebesseg}");
+            }
+
+            foreach (var a in autoLekerdezes)
+            {
+                Console.WriteLine($"{a.Eroforras},{a.Alvazszam},{a.SzallithatoSzemelyek},{a.Teljesitmeny}");
+            }
 
             Console.ReadKey();
         }

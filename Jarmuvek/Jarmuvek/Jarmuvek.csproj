@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gepjarmu.cs" />
+    <Compile Include="Munkagep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SzemelySzallito.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
