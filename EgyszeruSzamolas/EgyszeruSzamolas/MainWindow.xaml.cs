@@ -24,5 +24,33 @@ namespace EgyszeruSzamolas
         {
             InitializeComponent();
         }
+
+        private void buttonSzamol_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var a = Convert.ToInt32(textboxA.Text);
+                var b = Convert.ToInt32(textboxB.Text);
+                var c = Convert.ToInt32(textboxC.Text);
+                var eredmeny = (a + b) / c;
+
+                //labelEredmeny.Content = $"{eredmeny:0.00}";
+                labelEredmeny.Content = $"{eredmeny}";
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("A mezőkbe számokat kell megadni!","HIBA!",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            catch(DivideByZeroException ex)
+            {
+                MessageBox.Show("A C értéke nem lehet 0!", "HIBA!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "HIBA!", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+           
+
+        }
     }
 }
