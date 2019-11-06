@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfAtszamitas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAtszamitas"
+        mc:Ignorable="d"
+        Title="Km-mérföld átszámítás" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Az átváltandó km értéke:" VerticalAlignment="Center" FontSize="14"/>
+        <TextBox x:Name="textBoxKm" Grid.Column="1" Margin="30" FontSize="20" />
+        <Label Content="Eredmény mph-ben:" Grid.Row="1" VerticalAlignment="Center" FontSize="14" />
+        <Label x:Name="labelMph" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="18" />
+        <Button Content="Számolás" Grid.Row="2" Grid.ColumnSpan="2" Margin="30" />
+    </Grid>
+</Window>
