@@ -20,6 +20,6 @@
         <TextBox x:Name="textBoxKm" Grid.Column="1" Margin="30" FontSize="20" />
         <Label Content="Eredmény mph-ben:" Grid.Row="1" VerticalAlignment="Center" FontSize="14" />
         <Label x:Name="labelMph" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" FontSize="18" />
-        <Button Content="Számolás" Grid.Row="2" Grid.ColumnSpan="2" Margin="30" />
+        <Button Content="Számolás" Grid.Row="2" Grid.ColumnSpan="2" Margin="30" Click="Button_Click" />
     </Grid>
 </Window>

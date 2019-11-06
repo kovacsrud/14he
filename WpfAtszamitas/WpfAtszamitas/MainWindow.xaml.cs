@@ -24,5 +24,22 @@ namespace WpfAtszamitas
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                labelMph.Content = Convert.ToDouble(textBoxKm.Text) / 1.6;
+            }
+            catch(FormatException ex)
+            {
+                MessageBox.Show("A mezőbe számot kell megadni!","Hiba!",MessageBoxButton.OK,MessageBoxImage.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }
+            
+        }
     }
 }
