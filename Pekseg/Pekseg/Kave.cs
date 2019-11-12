@@ -26,5 +26,20 @@ namespace Pekseg
                 return CSESZEKAVE;
             }
         }
+
+        public override string ToString()
+        {
+            String kave = "";
+            if (habosE)
+            {
+                kave = kave + "Habos ";
+            }
+            else
+            {
+                kave = kave + "Nem habos ";
+            }
+
+            return $"{kave}, {mennyibeKerul()} Ft";
+        }
     }
 }
