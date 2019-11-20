@@ -1,0 +1,12 @@
+Készítsen grafikus felületû programot, amelynek segítségével
+tankoláskor a megadott bemenõ adatok alapján megjeleníthetõ
+a 100km-re esõ átlagfogyasztás
+egy km megtételének a költsége
+
+A bemenõ adatok:
+- megtett km
+- a tankolt üzemanyag mennyisége (feltételezzük hogy teletöltjük a tankot)
+- az üzemanyag ára
+
+Az esetleges hibákat (pl nem megfelelõ adatbevitel)
+kezelje a program!
