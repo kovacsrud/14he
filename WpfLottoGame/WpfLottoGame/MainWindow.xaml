@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfLottoGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfLottoGame"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="gombok" Grid.Column="1" >
+            <Button x:Name="buttonUj" Content="Új játék" Margin="10" />
+            <Button x:Name="buttonSorsolas" Content="Sorsolás" Margin="10" />
+
+        </StackPanel>
+        <Grid x:Name="szelvenyGrid" Grid.Row="0" Grid.Column="0">
+            
+        </Grid>
+    </Grid>
+</Window>
