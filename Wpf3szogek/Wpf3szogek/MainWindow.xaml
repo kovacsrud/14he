@@ -1,0 +1,35 @@
+﻿<Window x:Class="Wpf3szogek.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf3szogek"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonBetolt" Content="Adatok betöltése" Click="buttonBetolt_Click" />
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Content="Hibák a kiválasztott állományban" />
+            <ListBox x:Name="listboxHibak" />
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <Label Content="Derékszögű háromszögek" />
+            <ListBox x:Name="listboxDerekszogu" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Label Content="A kiválasztott derékszögű háromszög adatai" />
+            <Label x:Name="labelkerulet" />
+            <Label x:Name="labelterulet" />
+
+        </StackPanel>
+    </Grid>
+</Window>
