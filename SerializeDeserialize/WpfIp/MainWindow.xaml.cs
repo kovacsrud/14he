@@ -24,6 +24,7 @@ namespace WpfIp
     public partial class MainWindow : Window
     {
         JObject response;
+        JObject weather;
         String apiKey = "57e7f2daa88da7119dc6c575f1232c0f";
         String weatherApiKey = "cee47ae14c4e2b23dd70220929479c28";
 
@@ -40,6 +41,12 @@ namespace WpfIp
             return ipdata;
         }
 
+        public JObject GetWeather(string city)
+        {
+            JObject weatherData = JObject.Parse(new WebClient().DownloadString($"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={weatherApiKey}&units=metric"));
+            return weatherData;
+        }
+
         public Label DataLabel(string data,int meret=20)
         {
             Label label = new Label();
@@ -54,12 +61,23 @@ namespace WpfIp
             if (textBoxIp.Text.Length>=7)
             {
                 stackData.Children.Clear();
-                response = GetIP(textBoxIp.Text);
-                Debug.WriteLine(response);
-                stackData.Children.Add(DataLabel((string)response["continent_name"]));
-                stackData.Children.Add(DataLabel((string)response["country_name"]));
-                stackData.Children.Add(DataLabel((string)response["region_name"]));
-                stackData.Children.Add(DataLabel((string)response["city"]));
+                try
+                {
+                    response = GetIP(textBoxIp.Text);
+                    weather = GetWeather((string)response["city"]);
+                    Debug.WriteLine(response);
+                    Debug.WriteLine(weather);
+                    stackData.Children.Add(DataLabel((string)response["continent_name"]));
+                    stackData.Children.Add(DataLabel((string)response["country_name"]));
+                    stackData.Children.Add(DataLabel((string)response["region_name"]));
+                    stackData.Children.Add(DataLabel((string)response["city"]));
+                    stackData.Children.Add(DataLabel((string)weather["main"]["temp"]));
+                    stackData.Children.Add(DataLabel((string)weather["main"]["temp_min"]));
+                    stackData.Children.Add(DataLabel((string)weather["main"]["temp_max"]));
+                } catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message,"Hiba!");
+                }
 
             } else
             {
