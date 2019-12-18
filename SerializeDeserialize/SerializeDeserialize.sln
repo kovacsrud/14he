@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializeDeserialize", "SerializeDeserialize\SerializeDeserialize.csproj", "{FF97AB97-7865-43EB-9E98-29B30F5673B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonErtelmezes", "JsonErtelmezes\JsonErtelmezes.csproj", "{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FF97AB97-7865-43EB-9E98-29B30F5673B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF97AB97-7865-43EB-9E98-29B30F5673B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF97AB97-7865-43EB-9E98-29B30F5673B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
