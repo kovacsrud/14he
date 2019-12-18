@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerializeDeserialize", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonErtelmezes", "JsonErtelmezes\JsonErtelmezes.csproj", "{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfIp", "WpfIp\WpfIp.csproj", "{384E71E8-34B2-49B8-B2D9-FF251D24696B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2547F04-39E0-42D3-AC22-EFB45C6CEECA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384E71E8-34B2-49B8-B2D9-FF251D24696B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384E71E8-34B2-49B8-B2D9-FF251D24696B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384E71E8-34B2-49B8-B2D9-FF251D24696B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384E71E8-34B2-49B8-B2D9-FF251D24696B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
