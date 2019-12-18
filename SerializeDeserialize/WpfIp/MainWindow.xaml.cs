@@ -74,6 +74,8 @@ namespace WpfIp
                     stackData.Children.Add(DataLabel((string)weather["main"]["temp"]));
                     stackData.Children.Add(DataLabel((string)weather["main"]["temp_min"]));
                     stackData.Children.Add(DataLabel((string)weather["main"]["temp_max"]));
+                    stackData.Children.Add(DataLabel($"{DateTimeOffset.FromUnixTimeSeconds((long)weather["dt"]).DateTime.AddHours(1)}"));
+
                 } catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message,"Hiba!");
