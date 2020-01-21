@@ -28,5 +28,11 @@ namespace WpfAdapter
             adapter = new Adapter("Data Source=idojarasadatok.db;Version=3");
             adatok.ItemsSource = adapter.GetData().DefaultView;
         }
+
+        private void buttonUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            adapter.UpdateData();
+            adatok.Items.Refresh();
+        }
     }
 }

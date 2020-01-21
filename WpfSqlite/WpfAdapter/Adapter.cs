@@ -38,7 +38,7 @@ namespace WpfAdapter
             //update
             adapter.UpdateCommand = new SQLiteCommand(conn);
             adapter.UpdateCommand.CommandText = "UPDATE idojarasadatok SET "+
-                "ev=@ev,honap=@honap,nap=@nap,ora=@ora,homerseklet=@homerseklet "+
+                "ev=@ev,honap=@honap,nap=@nap,ora=@ora,homerseklet=@homerseklet, "+
                 "szelsebesseg=@szelsebesseg, paratartalom=@paratartalom "+
                 "WHERE rowid=@old_rowid";
             adapter.UpdateCommand.Parameters.Add("@ev", DbType.Int32, 0, "ev");
