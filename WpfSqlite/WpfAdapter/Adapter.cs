@@ -58,6 +58,17 @@ namespace WpfAdapter
 
 
         }
+
+        public DataTable GetData()
+        {
+            adapter.Fill(table);
+            return table;
+        }
+
+        public void UpdateData()
+        {
+            adapter.Update(table);
+        }
     
     }
 }

@@ -20,9 +20,13 @@ namespace WpfAdapter
     /// </summary>
     public partial class MainWindow : Window
     {
+        Adapter adapter;
+
         public MainWindow()
         {
             InitializeComponent();
+            adapter = new Adapter("Data Source=idojarasadatok.db;Version=3");
+            adatok.ItemsSource = adapter.GetData().DefaultView;
         }
     }
 }
