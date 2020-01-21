@@ -20,11 +20,29 @@ namespace WpfSqlite
     /// </summary>
     public partial class MainWindow : Window
     {
+        DbRepo repo;
+
         public MainWindow()
         {
             InitializeComponent();
-            DbRepo repo = new DbRepo("Data Source=idojarasadatok.db;Version=3",adatok);
+            repo = new DbRepo("Data Source=idojarasadatok.db;Version=3",adatok);
             repo.DbLekerdez();
+        }
+
+        private void buttonInsert_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var sor = repo.DbBeilleszt(ev.Text, honap.Text, nap.Text, ora.Text, homerseklet.Text, szelsebesseg.Text, paratartalom.Text);
+                MessageBox.Show($"{sor}.sor beillesztve");
+                repo.DbLekerdez();
+                adatok.Items.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }
+           
         }
     }
 }

@@ -42,7 +42,7 @@
                 <TextBox x:Name="homerseklet" Grid.Column="1" Grid.Row="4" MinWidth="30" />
                 <TextBox x:Name="szelsebesseg" Grid.Column="1" Grid.Row="5" MinWidth="30" />
                 <TextBox x:Name="paratartalom" Grid.Column="1" Grid.Row="6" MinWidth="30" />
-                <Button x:Name="buttonInsert" Content="INSERT" Grid.Row="7" Grid.ColumnSpan="2" />
+                <Button x:Name="buttonInsert" Content="INSERT" Grid.Row="7" Grid.ColumnSpan="2" Click="buttonInsert_Click" />
 
 
             </Grid>
