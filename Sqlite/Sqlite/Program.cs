@@ -63,7 +63,37 @@ namespace Sqlite
 
                     Console.WriteLine($"{sor} sor beillesztve");
 
+                   
+
                     
+                }
+
+            }
+
+            //update
+            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand sqlc=new SQLiteCommand())
+                {
+                    sqlc.Connection = conn;
+                    sqlc.CommandText = "UPDATE idojarasadatok SET ev=@ev where ev=2021";
+                    sqlc.Parameters.Add("@ev", DbType.Int32).Value = 2022;
+                    var sor = sqlc.ExecuteNonQuery();
+                    Console.WriteLine($"{sor} sor módosítva");
+                }
+
+            }
+            //delete
+            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (SQLiteCommand sqlc = new SQLiteCommand())
+                {
+                    sqlc.Connection = conn;
+                    sqlc.CommandText = "DELETE FROM idojarasadatok where ev=2022";
+                    var sor = sqlc.ExecuteNonQuery();
+                    Console.WriteLine($"{sor} sor törölve");
                 }
 
             }
