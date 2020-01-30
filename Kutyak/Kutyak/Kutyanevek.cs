@@ -21,6 +21,7 @@ namespace Kutyak
             public string Kutyaneve { get; set; }
 
         }
+
         private List<Kutyanev> kutyanevek = new List<Kutyanev>(); 
 
     public Kutyanevek(string fajl)
