@@ -92,6 +92,14 @@ namespace Kutyak_Reload
                 Console.WriteLine(ex.Message);                
             }
 
+
+            var fajtaatlagkor = teljes.ToLookup(x => x.Fajta);
+
+            foreach (var i in fajtaatlagkor)
+            {
+                Console.WriteLine($"{i.Key},{i.Average(x=>x.Eletkor)}");
+            }
+
             Console.ReadKey();
         }
     }
