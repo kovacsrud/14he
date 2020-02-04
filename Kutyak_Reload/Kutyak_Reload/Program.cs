@@ -17,8 +17,39 @@ namespace Kutyak_Reload
             Kutyak Kutyak = new Kutyak(@"kutyak.csv");
             var kutyak = Kutyak.GetKutyak();
 
+            var atlageletkor = kutyak.Average(x => x.Eletkor);
+            Console.WriteLine($"A kutyák átlag életkora:{atlageletkor:0.00}");
+
+            var nevvel = kutyak.Join(kutyaNevek,
+                k => k.NevId,
+                kn => kn.Id,
+                (k, kn) => new {Id=k.Id,
+                                FajtaId =k.FajtaId,
+                                Kutyanev =kn.Kutyaneve,
+                                Eletkor =k.Eletkor,
+                                UtolsoEllenorzes =k.UtolsoEllenorzes }
+                );
 
             
+
+            var teljes = nevvel.Join(kutyaFajtak,
+                n=>n.FajtaId,
+                kf=>kf.Id,
+                (n, kf) => new {Id=n.Id,
+                                Kutyanev =n.Kutyanev,
+                                Fajta =kf.Nev,
+                                Eletkor =n.Eletkor,
+                                UtolsoEllenorzes=n.UtolsoEllenorzes}
+                );
+
+
+            //foreach (var i in teljes)
+            //{
+            //    Console.WriteLine($"{i.Id},{i.Fajta},{i.Eletkor},{i.Kutyanev},{i.UtolsoEllenorzes}");
+            //}
+            var legidosebb = teljes.Where(x=>x.Eletkor==teljes.Max(y=>y.Eletkor));
+
+            Console.WriteLine($"A legidősebb kutya: {legidosebb.First().Eletkor},{legidosebb.First().Fajta},{legidosebb.First().Kutyanev}");
 
             Console.ReadKey();
         }
