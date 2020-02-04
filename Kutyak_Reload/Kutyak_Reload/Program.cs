@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,36 @@ namespace Kutyak_Reload
             foreach (var i in jan18)
             {
                 Console.WriteLine($"{i.Key},{i.Count()}.db");
+            }
+
+            var naponkent = teljes.ToLookup(x=>x.UtolsoEllenorzes).OrderByDescending(x=>x.Count());
+
+            //foreach (var i in naponkent)
+            //{
+            //    Console.WriteLine($"{i.Key},{i.Count()}");
+            //}
+
+            Console.WriteLine($"{naponkent.First().Key},{naponkent.First().Count()}");
+
+            var nevstat = teljes.ToLookup(x => x.Kutyanev).OrderByDescending(x=>x.Count());
+
+            try
+            {
+                FileStream fajl = new FileStream(@"nevstatisztika.txt", FileMode.Create);
+
+                using (StreamWriter writer=new StreamWriter(fajl,Encoding.UTF8))
+                {
+                    foreach (var i in nevstat)
+                    {
+                        writer.WriteLine($"{i.Key};{i.Count()}");
+                    }
+                }
+
+                Console.WriteLine("Kiírás kész!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);                
             }
 
             Console.ReadKey();
