@@ -14,12 +14,11 @@ namespace Kutyak_Reload
             var kutyaNevek = kutyanevek.GetKutyanevek();
             Kutyafajtak kutyafajtak = new Kutyafajtak(@"KutyaFajtak.csv");
             var kutyaFajtak = kutyafajtak.GetKutyafajtak();
+            Kutyak Kutyak = new Kutyak(@"kutyak.csv");
+            var kutyak = Kutyak.GetKutyak();
 
 
-            //foreach (var i in kutyaFajtak)
-            //{
-            //    Console.WriteLine($"{i.Id},{i.Nev},{i.EredetiNev}");
-            //}
+            
 
             Console.ReadKey();
         }

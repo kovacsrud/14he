@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Kutyafajtak.cs" />
+    <Compile Include="Kutyak.cs" />
     <Compile Include="Kutyanevek.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
