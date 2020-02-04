@@ -51,6 +51,16 @@ namespace Kutyak_Reload
 
             Console.WriteLine($"A legidősebb kutya: {legidosebb.First().Eletkor},{legidosebb.First().Fajta},{legidosebb.First().Kutyanev}");
 
+            var adottnap = teljes.Where(x => x.UtolsoEllenorzes == "2018.01.10");
+
+            
+            var jan18 = adottnap.ToLookup(x=>x.Fajta);
+
+            foreach (var i in jan18)
+            {
+                Console.WriteLine($"{i.Key},{i.Count()}.db");
+            }
+
             Console.ReadKey();
         }
     }
