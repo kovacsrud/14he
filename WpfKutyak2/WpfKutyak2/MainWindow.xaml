@@ -72,6 +72,22 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            <TabItem Header="Kezelés rögzítése">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Button x:Name="buttonUjKezeles" Content="Új kezelés rögzítése" Grid.Row="1" Grid.ColumnSpan="4" Click="buttonUjKezeles_Click" />
+                </Grid>
+    
+            </TabItem>
         </TabControl>
     </Grid>
 </Window>

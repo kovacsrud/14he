@@ -70,15 +70,46 @@ namespace WpfKutyak2
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
             searchAdatok.Items.Clear();
-            var search = kutyaContext.Kutyak.Local.Where(x=>x.Kutyanevek.kutyanev==searchNev.Text);
+            IEnumerable<Kutyak> search=new List<Kutyak>();
+            
 
-            foreach (var i in search)
+
+            if (searchNev.Text.Length>0 && searchFajta.Text.Length>0)
             {
-                searchAdatok.Items.Add(i);
-                Debug.WriteLine(i.eletkor);
-                Debug.WriteLine(i.id);
-                Debug.WriteLine(i.Kutyafajtak.nev);
+                search = kutyaContext.Kutyak.Local.Where(x => x.Kutyanevek.kutyanev == searchNev.Text && x.Kutyafajtak.nev==searchFajta.Text);
+            } else if (searchNev.Text.Length > 0)
+            {
+                search = kutyaContext.Kutyak.Local.Where(x => x.Kutyanevek.kutyanev == searchNev.Text);
+
+            } else if(searchFajta.Text.Length > 0)
+            {
+                search = kutyaContext.Kutyak.Local.Where(x =>x.Kutyafajtak.nev == searchFajta.Text);
+            } else
+            {
+                MessageBox.Show("Nem található adat!");
             }
+
+            if (search.Count()>0)
+            {
+                foreach (var i in search)
+                {
+                    searchAdatok.Items.Add(i);
+                    Debug.WriteLine(i.eletkor);
+                    Debug.WriteLine(i.id);
+                    Debug.WriteLine(i.Kutyafajtak.nev);
+                }
+            } else
+            {
+                MessageBox.Show("Nincs találat!");
+            }
+            
+        }
+
+        private void buttonUjKezeles_Click(object sender, RoutedEventArgs e)
+        {
+            Kutyak ujkutya = new Kutyak {eletkor=10,utolsoellenorzes= new DateTime().Date, fajtaid =1,nevid=1 };
+            kutyaContext.Kutyak.Add(ujkutya);
+            kutyaContext.SaveChanges();
         }
     }
 }
