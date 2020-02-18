@@ -35,7 +35,10 @@ namespace WpfKutyak2
             DataContext = kutyaContext.Kutyak.Local;
             kutyanevAdatok.DataContext = kutyaContext.Kutyanevek.Local;
             kutyafajtaAdatok.DataContext = kutyaContext.Kutyafajtak.Local;
-
+            comboUjKutyaId.ItemsSource = kutyaContext.Kutyanevek.Local;
+            comboUjFajtaId.ItemsSource = kutyaContext.Kutyafajtak.Local;
+            comboModKutyaId.ItemsSource= kutyaContext.Kutyanevek.Local;
+            comboModFajtaId.ItemsSource = kutyaContext.Kutyafajtak.Local;
         }
 
         private void kutyanevUpdate_Click(object sender, RoutedEventArgs e)
@@ -107,8 +110,40 @@ namespace WpfKutyak2
 
         private void buttonUjKezeles_Click(object sender, RoutedEventArgs e)
         {
-            Kutyak ujkutya = new Kutyak {eletkor=10,utolsoellenorzes= new DateTime().Date, fajtaid =1,nevid=1 };
+           try {
+                Kutyak ujkutya = new Kutyak
+                {
+                    eletkor = Convert.ToInt32(textBoxUjEletkor.Text),
+                    utolsoellenorzes = Convert.ToDateTime(textBoxUjDatum.Text),
+                    fajtaid = Convert.ToInt32(comboUjFajtaId.SelectedValue),
+                    nevid = Convert.ToInt32(comboUjKutyaId.SelectedValue)
+                };
             kutyaContext.Kutyak.Add(ujkutya);
+            kutyaContext.SaveChanges();
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Hiba");
+            }
+        }
+
+        private void ModSelectionChanged(object sender,SelectionChangedEventArgs e)
+        {
+            Kutyak selectkutya = (Kutyak)kutyaAdatokModositas.SelectedItem;
+            textBoxModId.Text = Convert.ToString(selectkutya.id);
+            textBoxModEletkor.Text= Convert.ToString(selectkutya.eletkor);
+            textBoxModDatum.Text= Convert.ToString(selectkutya.utolsoellenorzes);
+            comboModKutyaId.SelectedValue = selectkutya.nevid;
+            comboModFajtaId.SelectedValue = selectkutya.fajtaid;
+        }
+
+        private void buttonModositas_Click(object sender, RoutedEventArgs e)
+        {
+            var modositando = kutyaContext.Kutyak.Local.Where(x=>x.id==Convert.ToInt32(textBoxModId.Text));
+            modositando.First().eletkor = Convert.ToInt32(textBoxModEletkor.Text);
+            modositando.First().utolsoellenorzes = Convert.ToDateTime(textBoxModDatum.Text);
+            modositando.First().fajtaid = Convert.ToInt32(comboModFajtaId.SelectedValue);
+            modositando.First().nevid = Convert.ToInt32(comboModKutyaId.SelectedValue);
+
             kutyaContext.SaveChanges();
         }
     }

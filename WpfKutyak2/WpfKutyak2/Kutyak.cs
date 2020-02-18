@@ -22,9 +22,7 @@ namespace WpfKutyak2
 
         public virtual Kutyafajtak Kutyafajtak { get; set; }
 
-        //public virtual Kutyak Kutyak1 { get; set; }
-
-        //public virtual Kutyak Kutyak2 { get; set; }
+       
 
         public virtual Kutyanevek Kutyanevek { get; set; }
     }
