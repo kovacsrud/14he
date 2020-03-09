@@ -24,7 +24,7 @@ namespace NAlap.Test
         public void NOsztKivetel()
         {
             var sut = new AlapMuvelet();
-            Assert.Throws<ArgumentException>(()=>sut.Oszt(10,0));
+            Assert.Throws<ArgumentException>(()=>sut.Oszt(10,0n));
         }
     }
 }
