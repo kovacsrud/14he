@@ -53,6 +53,25 @@ namespace NHaromszog.Test
         }
 
         //Egyéb kivételek tesztjei
+        [Test]
+        public void EllDerekSzoguKivetel()
+        {
+            var ex = Assert.Throws<HaromszogHiba>(()=>new DHaromszog("3 4 4"));
+            Assert.AreEqual("A háromszög nem derékszögű!", ex.Message);
+        }
 
+        [Test]
+        public void EllMegszerkeszthetoKivetel()
+        {
+            var ex = Assert.Throws<HaromszogHiba>(()=>new DHaromszog("4 4 10"));
+            Assert.AreEqual("A háromszög nem szerkeszthető meg!", ex.Message);
+        }
+
+        [Test]
+        public void EllNovekvoSorrend()
+        {
+            var ex = Assert.Throws<HaromszogHiba>(()=>new DHaromszog("4 3 5"));
+            Assert.AreEqual("Az oldalak nincsenek növekvő sorrendben!", ex.Message);
+        }
     }
 }

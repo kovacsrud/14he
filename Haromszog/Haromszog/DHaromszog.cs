@@ -127,10 +127,7 @@ namespace Haromszog
             b = Convert.ToDouble(e[1]);
             c = Convert.ToDouble(e[2]);
 
-            if (!EllDerekszogu)
-            {
-                throw new HaromszogHiba("A háromszög nem derékszögű!");
-            }
+           
             if (!EllMegszerkesztheto)
             {
                 throw new HaromszogHiba("A háromszög nem szerkeszthető meg!");
@@ -139,7 +136,10 @@ namespace Haromszog
             {
                 throw new HaromszogHiba("Az oldalak nincsenek növekvő sorrendben!");
             }
-
+            if (!EllDerekszogu)
+            {
+                throw new HaromszogHiba("A háromszög nem derékszögű!");
+            }
         }
 
     }
