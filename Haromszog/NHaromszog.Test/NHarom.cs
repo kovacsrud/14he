@@ -30,5 +30,29 @@ namespace NHaromszog.Test
             Assert.IsNotNull(sut);
             Assert.AreEqual(6, sut.Terulet);
         }
+
+        [Test]
+        public void AoldalKivetel()
+        {
+            var ex = Assert.Throws<HaromszogHiba>(()=>new DHaromszog("0 4 5"));
+            Assert.AreEqual("Az a oldal nem lehet nulla negatív!",ex.Message);
+        }
+
+        [Test]
+        public void BoldalKivetel()
+        {
+            var ex = Assert.Throws<HaromszogHiba>(()=>new DHaromszog("3 0 5"));
+            Assert.AreEqual("A b oldal nem lehet nulla negatív!",ex.Message);
+        }
+
+        [Test]
+        public void ColdalKivetel()
+        {
+            var ex=Assert.Throws<HaromszogHiba>(()=>new DHaromszog("3 4 0"));
+            Assert.AreEqual("A c oldal nem lehet nulla negatív!", ex.Message);
+        }
+
+        //Egyéb kivételek tesztjei
+
     }
 }
